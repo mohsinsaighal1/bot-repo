@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Hamster from "./icons/Hamster";
-import { TonConnectButton } from "@tonconnect/ui-react";
+import { TonConnectButton ,TonConnectUIProvider} from "@tonconnect/ui-react";
 
 useWeb3ModalAccount;
 import {
@@ -384,6 +384,12 @@ const App: React.FC = () => {
   };
 
   return (
+    <TonConnectUIProvider
+    manifestUrl="https://bot-repo-euzt.vercel.app/tonconnect-manifest.json"
+    actionsConfiguration={{
+      twaReturnUrl: "https://t.me/argonteqbot/argonapp",
+    }}
+  >
       <div className="bg-black flex justify-center h-auto">
         <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
           <div className="px-4 z-10">
@@ -593,6 +599,8 @@ const App: React.FC = () => {
           </div>
         ))}
       </div>
+      </TonConnectUIProvider>
+
   );
 };
 
