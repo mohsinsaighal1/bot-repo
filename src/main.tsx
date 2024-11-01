@@ -7,9 +7,9 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <TonConnectUIProvider
-      manifestUrl="https://telegram-game-seven-rose.vercel.app/tonconnect-manifest.json"
+      manifestUrl="https://bot-repo-euzt.vercel.app/tonconnect-manifest.json"
       actionsConfiguration={{
-        twaReturnUrl: "https://t.me/ArgonTeq_bot/argon_game",
+        twaReturnUrl: "https://t.me/argonteqbot/argonapp",
       }}
     >
       <App />
