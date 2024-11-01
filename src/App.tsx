@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Hamster from "./icons/Hamster";
-import { TonConnectButton, TonConnectUIProvider, useTonConnectUI } from "@tonconnect/ui-react";
+import { TonConnectButton } from "@tonconnect/ui-react";
 
 useWeb3ModalAccount;
 import {
@@ -36,7 +36,6 @@ window.open = (function (open) {
 
 const App: React.FC = () => {
   const { walletProvider } = useWeb3ModalProvider();
-  const [tonConnectUI, setOptions] = useTonConnectUI();
 
   const [status, setStatus] = useState<string | null>(null);
 
@@ -90,7 +89,7 @@ const App: React.FC = () => {
     enableAnalytics: true, // Optional - defaults to your Cloud configuration
   });
 
-  const { open, close } = useWeb3Modal();
+  const {  close } = useWeb3Modal();
   const { address } = useWeb3ModalAccount();
 
   const levelNames = [

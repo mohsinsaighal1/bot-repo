@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { TonConnectUIProvider, useTonConnectUI } from "@tonconnect/ui-react";
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
