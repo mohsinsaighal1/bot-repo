@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Hamster from "./icons/Hamster";
-import { TonConnectButton ,TonConnectUIProvider} from "@tonconnect/ui-react";
+import { TonConnectButton, TonConnectUIProvider } from "@tonconnect/ui-react";
 
 useWeb3ModalAccount;
 import {
@@ -27,12 +27,6 @@ import {
 } from "@web3modal/ethers5/react";
 import { UserType } from "./utils/types";
 import { ethers } from "ethers";
-
-window.open = (function (open) {
-  return function (url, _, features) {
-    return open.call(window, url, "_blank", features);
-  };
-})(window.open);
 
 const App: React.FC = () => {
   const { walletProvider } = useWeb3ModalProvider();
@@ -89,7 +83,7 @@ const App: React.FC = () => {
     enableAnalytics: true, // Optional - defaults to your Cloud configuration
   });
 
-  const {  close } = useWeb3Modal();
+  const { close } = useWeb3Modal();
   const { address } = useWeb3ModalAccount();
 
   const levelNames = [
@@ -385,15 +379,15 @@ const App: React.FC = () => {
 
   return (
     <TonConnectUIProvider
-    manifestUrl="https://bot-repo-euzt.vercel.app/tonconnect-manifest.json"
-    actionsConfiguration={{
-      twaReturnUrl: "https://t.me/argonteqbot/argonapp",
-    }}
-  >
+      manifestUrl="https://bot-repo-euzt.vercel.app/tonconnect-manifest.json"
+      actionsConfiguration={{
+        twaReturnUrl: "https://t.me/argonteqbot/argonapp",
+      }}
+    >
       <div className="bg-black flex justify-center h-auto">
         <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
           <div className="px-4 z-10">
-          <TonConnectButton />
+            <TonConnectButton />
 
             <button
               onClick={() => transferToken()}
@@ -599,8 +593,7 @@ const App: React.FC = () => {
           </div>
         ))}
       </div>
-      </TonConnectUIProvider>
-
+    </TonConnectUIProvider>
   );
 };
 
